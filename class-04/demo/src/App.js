@@ -1,10 +1,13 @@
 import React from 'react';
+import Forms from './components/Forms';
+import UserInfo from './components/UserInfoForm';
 
 class App extends React.Component {
   render() {
     return (
       <>
-        Hello World
+        {/* <Forms /> */}
+        <UserInfo />
       </>
     )
   }
