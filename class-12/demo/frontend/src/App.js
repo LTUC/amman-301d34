@@ -10,25 +10,24 @@ class App extends React.Component {
     }
   }
 
-  // componentDidMount = ()=>{
-  //   this.getCats();
-  // }
 
   getCats = async () => {
-
-    let catsData = await axios.get(`${process.env.REACT_APP_SERVER}/cats`)
-    this.setState({
-      cats: catsData.data
-    })
-    // console.log(this.state.cats)
-
+    const res = await axios.get('http://localhost:3001/cats');
+    this.setState({ cats: res.data });
+    console.log(this.state);
   }
+
+  componentDidMount() {
+    console.log("inside the componentDidMount");
+    this.getCats();
+  }
+
 
   render() {
     return (
       <div>
         <button onClick={this.getCats}>
-         Get Cats Data
+          Get Cats Data
         </button>
       </div>
     )
